@@ -13,7 +13,17 @@ import{initializeApp}from"https://www.gstatic.com/firebasejs/10.14.1/firebase-ap
 import{getAuth,signInAnonymously}from"https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js";
 import{getDatabase,ref,onValue,get,off}from"https://www.gstatic.com/firebasejs/10.14.1/firebase-database.js";
 import{getFunctions,httpsCallable}from"https://www.gstatic.com/firebasejs/10.14.1/firebase-functions.js";
-const firebaseConfig={apiKey:"YOUR_API_KEY",authDomain:"YOUR_PROJECT_ID.firebaseapp.com",databaseURL:"https://YOUR_PROJECT_ID-default-rtdb.firebaseio.com",projectId:"YOUR_PROJECT_ID",appId:"YOUR_APP_ID"};
+const firebaseConfig={const firebaseConfig = {
+  apiKey: "AIzaSyDH0JWlFEYBUQDsVC6kXOtpLsupBMRgbZo",
+  authDomain: "wolf-human-10e2d.firebaseapp.com",
+  databaseURL: "https://wolf-human-10e2d-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "wolf-human-10e2d",
+  storageBucket: "wolf-human-10e2d.firebasestorage.app",
+  messagingSenderId: "1048355377990",
+  appId: "1:1048355377990:web:2394c6c214bcd6cf508b47",
+  measurementId: "G-8CTG7DNQZL"
+};
+  ",databaseURL:"https://YOUR_PROJECT_ID-default-rtdb.firebaseio.com",projectId:"YOUR_PROJECT_ID",appId:"YOUR_APP_ID"};
 const $=id=>document.getElementById(id),roles={wolf:["🐺","人狼","夜に襲撃先を選べます。人狼同士の秘密チャットが使えます。"],villager:["🧑‍🌾","村人","能力はありません。会話と投票で人狼を探しましょう。"],seer:["🔮","占い師","夜に1人を占い、人狼かどうか調べられます。"],guard:["🛡️","騎士","夜に1人を襲撃から守れます。"],madman:["🃏","狂人","人狼陣営ですが、人狼が誰かは分かりません。"]};
 let app,auth,db,api,uid="",name="",code="",host=false,room={},shownRole="",unsubs=[];
 function status(t){$("connectMsg").textContent=t}function esc(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
